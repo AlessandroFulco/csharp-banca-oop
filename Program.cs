@@ -122,10 +122,13 @@ Console.WriteLine("Benvenuto nel programma");
 
 
 
-//ricerca sui prestiti concessi ad un cliente dato il codice fiscale
-Console.WriteLine("Sezione prestiti reltivi al singolo cliente");
-Console.WriteLine();
-Console.Write("Inserisci il Codice fiscale: ");
-string codiceFiscale = Console.ReadLine();
+////ricerca sui prestiti concessi ad un cliente dato il codice fiscale
+//Console.WriteLine("Sezione prestiti reltivi al singolo cliente");
+//Console.WriteLine();
+//Console.Write("Inserisci il Codice fiscale: ");
+//string codiceFiscale = Console.ReadLine();
 
-intesa.StampaProspettoClienti(codiceFiscale);
+//List<Prestito> prestitiCliente = intesa.RicercaPrestito(codiceFiscale);
+////fine ricerca prestiti dato un codice fiscale
+
+

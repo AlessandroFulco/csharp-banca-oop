@@ -152,13 +152,17 @@ public class Banca
     public void StampaProspettoClienti(string codiceFiscale)
     {
         //stampare per tutti i clienti
+
         
     }
 
     public void StampaProspettoPrestiti()
     {
         //stampa per tutti i prestiti
-        
+        foreach(Prestito prestito in Prestiti)
+        {
+            Console.WriteLine(prestito.ToString());
+        }        
     }
 
     public bool AggiungiPrestito(int ammontare, int valoreRata, DateTime inizio, string codiceFiscale)
