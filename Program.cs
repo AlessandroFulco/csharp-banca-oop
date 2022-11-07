@@ -60,27 +60,60 @@ Console.WriteLine("Benvenuto nel programma");
 //    Console.WriteLine("Ops, qualcosa non va");
 //fine aggiunta cliente
 
-//modifica dati cliente
-Console.WriteLine("Modifica Dati cliente");
+////modifica dati cliente
+//Console.WriteLine("Modifica Dati cliente");
 
-Console.WriteLine("Quale cliente vuoi modificare ?");
-string inputUtente = Console.ReadLine();
+//Console.WriteLine("Quale cliente vuoi modificare ?");
+//string inputUtente = Console.ReadLine();
 
-Console.Write("Inserisci Nome: ");
-string nome = Console.ReadLine();
+//Console.Write("Inserisci Nome: ");
+//string nome = Console.ReadLine();
 
-Console.Write("Inserisci Cognome: ");
-string cognome = Console.ReadLine();
+//Console.Write("Inserisci Cognome: ");
+//string cognome = Console.ReadLine();
 
-Console.Write("Inserisci Codice Fiscale: ");
+//Console.Write("Inserisci Codice Fiscale: ");
+//string codiceFiscale = Console.ReadLine();
+
+//Console.Write("Inserisci il tuo stipendio: ");
+//int stipendio = Convert.ToInt32(Console.ReadLine());
+
+//bool modificaCliente = intesa.ModificaCliente(inputUtente, nome, cognome, codiceFiscale, stipendio);
+//if (modificaCliente)
+//    Console.WriteLine("Modifica Avvenuta con successo");
+//else
+//    Console.WriteLine("Ops, qualcosa non va");
+////fine modifica cliente
+
+
+
+//Creazione prestito
+Console.WriteLine("Sezione Aggiungi Prestito");
+Console.WriteLine();
+Console.Write("Inserisci il codice fiscale: ");
 string codiceFiscale = Console.ReadLine();
 
-Console.Write("Inserisci il tuo stipendio: ");
-int stipendio = Convert.ToInt32(Console.ReadLine());
+Cliente cliente = intesa.RicercaCliente(codiceFiscale);
 
-bool modificaCliente = intesa.ModificaCliente(inputUtente, nome, cognome, codiceFiscale, stipendio);
-if (modificaCliente)
-    Console.WriteLine("Modifica Avvenuta con successo");
+if(cliente == null)
+{
+    Console.WriteLine("Errore, nessun cliente registrato con questo codice fiscale");
+}
 else
-    Console.WriteLine("Ops, qualcosa non va");
-//fine modifica cliente
+{
+    Console.WriteLine("Inserisci l'ammontare del prestito");
+    int ammontare = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Inserisci rata del prestito");
+    int valoreRata = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Inserisci la data di inizio prestito");
+    DateTime inizio = Convert.ToDateTime(Console.ReadLine());
+
+    bool prestito = intesa.AggiungiPrestito(ammontare, valoreRata, inizio, codiceFiscale);
+
+    if (prestito)
+        Console.WriteLine("Presito creato con successo");
+    else
+        Console.WriteLine("Ops, qualcosa non va;");
+}

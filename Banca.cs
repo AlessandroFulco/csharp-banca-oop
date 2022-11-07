@@ -28,7 +28,7 @@ public class Banca
 {
     public string Nome { get; set; }
     public List<Cliente> Clienti { get; set; }
-    List<Prestito> Prestiti { get; set; }
+    public List<Prestito> Prestiti { get; set; }
 
     public Banca(string nome)
     {
@@ -148,8 +148,25 @@ public class Banca
         //stampa per tutti i prestiti
     }
 
-    public void AggiungiPrestito(Prestito nuovoPrestito)
+    public bool AggiungiPrestito(int ammontare, int valoreRata, DateTime inizio, string codiceFiscale)
     {
 
+        Cliente cliente = RicercaCliente(codiceFiscale);
+        if(cliente == null)
+            return false;
+
+        
+        if(
+            ammontare == null || valoreRata == null || inizio == null
+            )
+        {
+            return false;
+        }
+        else
+        {
+            Prestito prestito = new Prestito(ammontare, valoreRata, inizio, cliente);
+            Prestiti.Add(prestito);
+            return true;
+        }
     }
 }
