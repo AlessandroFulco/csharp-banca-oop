@@ -135,7 +135,12 @@ public class Banca
     {
         int ammontare = 0; //metterò il conteggio
 
-        //conteggio...
+        List<Prestito> prestitiCliente = RicercaPrestito(codiceFiscale);
+
+        foreach(Prestito prestito in prestitiCliente)
+        {
+            ammontare += prestito.Ammontare;
+        }
 
         return ammontare;
     }
@@ -171,7 +176,6 @@ public class Banca
         Cliente cliente = RicercaCliente(codiceFiscale);
         if(cliente == null)
             return false;
-
         
         if(
             ammontare == null || valoreRata == null || inizio == null

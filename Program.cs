@@ -131,4 +131,3 @@ Console.WriteLine("Benvenuto nel programma");
 //List<Prestito> prestitiCliente = intesa.RicercaPrestito(codiceFiscale);
 ////fine ricerca prestiti dato un codice fiscale
 
-
