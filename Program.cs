@@ -87,33 +87,45 @@ Console.WriteLine("Benvenuto nel programma");
 
 
 
-//Creazione prestito
-Console.WriteLine("Sezione Aggiungi Prestito");
+////Creazione prestito
+//Console.WriteLine("Sezione Aggiungi Prestito");
+//Console.WriteLine();
+//Console.Write("Inserisci il codice fiscale: ");
+//string codiceFiscale = Console.ReadLine();
+
+//Cliente cliente = intesa.RicercaCliente(codiceFiscale);
+
+//if(cliente == null)
+//{
+//    Console.WriteLine("Errore, nessun cliente registrato con questo codice fiscale");
+//}
+//else
+//{
+//    Console.WriteLine("Inserisci l'ammontare del prestito");
+//    int ammontare = Convert.ToInt32(Console.ReadLine());
+
+//    Console.WriteLine("Inserisci rata del prestito");
+//    int valoreRata = Convert.ToInt32(Console.ReadLine());
+
+//    Console.WriteLine("Inserisci la data di inizio prestito");
+//    DateTime inizio = Convert.ToDateTime(Console.ReadLine());
+
+//    bool prestito = intesa.AggiungiPrestito(ammontare, valoreRata, inizio, codiceFiscale);
+
+//    if (prestito)
+//        Console.WriteLine("Presito creato con successo");
+//    else
+//        Console.WriteLine("Ops, qualcosa non va;");
+//}
+////fine aggiunta prestito
+///
+
+
+
+//ricerca sui prestiti concessi ad un cliente dato il codice fiscale
+Console.WriteLine("Sezione prestiti reltivi al singolo cliente");
 Console.WriteLine();
-Console.Write("Inserisci il codice fiscale: ");
+Console.Write("Inserisci il Codice fiscale: ");
 string codiceFiscale = Console.ReadLine();
 
-Cliente cliente = intesa.RicercaCliente(codiceFiscale);
-
-if(cliente == null)
-{
-    Console.WriteLine("Errore, nessun cliente registrato con questo codice fiscale");
-}
-else
-{
-    Console.WriteLine("Inserisci l'ammontare del prestito");
-    int ammontare = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Inserisci rata del prestito");
-    int valoreRata = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Inserisci la data di inizio prestito");
-    DateTime inizio = Convert.ToDateTime(Console.ReadLine());
-
-    bool prestito = intesa.AggiungiPrestito(ammontare, valoreRata, inizio, codiceFiscale);
-
-    if (prestito)
-        Console.WriteLine("Presito creato con successo");
-    else
-        Console.WriteLine("Ops, qualcosa non va;");
-}
+intesa.StampaProspettoClienti(codiceFiscale);

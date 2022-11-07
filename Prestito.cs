@@ -41,4 +41,9 @@ public class Prestito
 
         return Fine;
     }
+
+    public override string ToString()
+    {
+        return "Id: " + Id + " Ammontare: "+ Ammontare+" Valore Rata: "+ValoreRata+" Data inizio prestito: " + Inizio + " Data fine prestito: " + Fine + " Intestatario prestito" + Intestatario.Nome;
+    }
 }
