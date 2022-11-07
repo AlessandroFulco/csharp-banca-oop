@@ -117,7 +117,16 @@ public class Banca
     {
         List<Prestito> prestiti = new List<Prestito>();
 
-        //algoritmo
+        Cliente cliente = RicercaCliente(codiceFiscale);
+
+        foreach (Prestito prestito in Prestiti)
+        {
+            if(prestito.Intestatario.CodiceFiscale == codiceFiscale)
+            {
+                prestiti.Add(prestito);
+            }
+        }
+
 
         return prestiti;
     }
@@ -143,15 +152,7 @@ public class Banca
     public void StampaProspettoClienti(string codiceFiscale)
     {
         //stampare per tutti i clienti
-        Cliente cliente = RicercaCliente(codiceFiscale);
-
-        foreach (Prestito prestito in Prestiti)
-        {
-            if (prestito.Intestatario.CodiceFiscale == codiceFiscale)
-            {
-                Console.WriteLine(prestito.ToString());
-            }
-        }
+        
     }
 
     public void StampaProspettoPrestiti()
