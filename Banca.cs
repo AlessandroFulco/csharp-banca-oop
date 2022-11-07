@@ -38,9 +38,10 @@ public class Banca
 
         Cliente c1 = new Cliente("Alessandro", "Fulco", "gfagfdsg78656", 2000);
         Clienti.Add(c1);
-        Prestito p1 = new Prestito(10000, 1000, new DateTime(07012023), c1);
+        DateTime start = DateTime.Now;
+        Prestito p1 = new Prestito(10000, 1000, start, c1);
         Prestiti.Add(p1);
-        Prestito p2 = new Prestito(10000, 2000, new DateTime(07012023), c1);
+        Prestito p2 = new Prestito(10000, 2000, start, c1);
         Prestiti.Add(p2);
     }
 
