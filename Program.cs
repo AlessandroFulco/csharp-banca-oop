@@ -34,6 +34,29 @@
     Bonus:
     visualizzare per ogni cliente, la situazione dei suoi prestiti in formato tabellare.
 */
+Banca intesa = new Banca("Intesa San Paolo");
 
+//inizio programma
+Console.WriteLine("Benvenuto nel programma");
+
+//ricerca di un cliente
+Console.WriteLine("Aggiunta cliente");
+Console.Write("Inserisci Nome: ");
+string nome = Console.ReadLine();
+
+Console.Write("Inserisci Cognome: ");
+string cognome = Console.ReadLine();
+
+Console.Write("Inserisci Codice Fiscale: ");
+string codiceFiscale = Console.ReadLine();
+
+Console.Write("Inserisci il tuo stipendio: ");
+int stipendio = Convert.ToInt32(Console.ReadLine());
+
+bool cliente = intesa.AggiungiCliente(nome, cognome, codiceFiscale, stipendio);
+if (cliente)
+    Console.WriteLine("Cliente registrato con successo");
+else
+    Console.WriteLine("Ops, qualcosa non va");
 
 
