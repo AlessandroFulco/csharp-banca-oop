@@ -42,6 +42,13 @@ public class Prestito
         return Fine;
     }
 
+    public int RateRimanenti()
+    {
+        int rate = 0;
+
+        return rate = Fine.Subtract(Inizio).Days / 30;
+    }
+
     public override string ToString()
     {
         return "Id: " + Id + " Ammontare: "+ Ammontare+" Valore Rata: "+ValoreRata+" Data inizio prestito: " + Inizio + " Data fine prestito: " + Fine + " Intestatario prestito" + Intestatario.Nome;

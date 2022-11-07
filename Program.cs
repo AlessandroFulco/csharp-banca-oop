@@ -131,3 +131,12 @@ Console.WriteLine("Benvenuto nel programma");
 //List<Prestito> prestitiCliente = intesa.RicercaPrestito(codiceFiscale);
 ////fine ricerca prestiti dato un codice fiscale
 
+
+//prospetto clienti rate mancanti
+List<Prestito> prestiti = intesa.RicercaPrestito("gfagfdsg78656");
+
+foreach (Prestito prestito in prestiti)
+{
+    Console.WriteLine("Prestito intestato a: " + prestito.Intestatario.Nome + ". Rate rimanenti: " + prestito.RateRimanenti());
+}
+

@@ -40,6 +40,8 @@ public class Banca
         Clienti.Add(c1);
         Prestito p1 = new Prestito(10000, 1000, new DateTime(07012023), c1);
         Prestiti.Add(p1);
+        Prestito p2 = new Prestito(10000, 2000, new DateTime(07012023), c1);
+        Prestiti.Add(p2);
     }
 
     public bool AggiungiCliente(string nome, string cognome, string codiceFiscale, int stipendio)
@@ -143,22 +145,6 @@ public class Banca
         }
 
         return ammontare;
-    }
-
-    public int RateMancantiCliente(string codiceFiscale)
-    {
-        int rateMancanti = 0; //metterò il conteggio
-
-        //conteggio...
-
-        return rateMancanti;
-    }
-
-    public List<Prestito> StampaProspettoClienti(string codiceFiscale)
-    {
-        //stampare per tutti i clienti
-        return RicercaPrestito(codiceFiscale);
-        
     }
 
     public void StampaProspettoPrestiti()
