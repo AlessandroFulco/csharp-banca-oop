@@ -149,10 +149,10 @@ public class Banca
         return rateMancanti;
     }
 
-    public void StampaProspettoClienti(string codiceFiscale)
+    public List<Prestito> StampaProspettoClienti(string codiceFiscale)
     {
         //stampare per tutti i clienti
-
+        return RicercaPrestito(codiceFiscale);
         
     }
 
