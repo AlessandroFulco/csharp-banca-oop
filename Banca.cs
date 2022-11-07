@@ -35,6 +35,9 @@ public class Banca
         Nome = nome;
         Clienti = new List<Cliente>();
         Prestiti = new List<Prestito>();
+
+        Cliente c1 = new Cliente("Alessandro", "Fulco", "gfagfdsg78656", 2000);
+        Clienti.Add(c1);
     }
 
     public bool AggiungiCliente(string nome, string cognome, string codiceFiscale, int stipendio)
@@ -62,6 +65,36 @@ public class Banca
 
         return true;
 
+    }
+
+    public bool ModificaCliente(string inputUtente, string nome, string cognome, string codiceFiscale, int stipendio)
+    {
+        Cliente modificaCliente = RicercaCliente(inputUtente);
+
+        if (
+            nome == "" &&
+            cognome == "" &&
+            codiceFiscale == "" &&
+            stipendio == null
+            )
+        {
+            return false;
+        }
+
+        if (modificaCliente == null)
+        {
+            return false;
+        }
+        if (nome != "")
+            modificaCliente.Nome = nome;
+        if (cognome != "")
+            modificaCliente.Cognome = cognome;
+        if (codiceFiscale != "")
+            modificaCliente.CodiceFiscale= codiceFiscale;
+        if (stipendio != null || stipendio <= 0)
+            modificaCliente.Stipendio = stipendio;
+
+        return true;
     }
 
     public Cliente RicercaCliente(string codiceFiscale)
